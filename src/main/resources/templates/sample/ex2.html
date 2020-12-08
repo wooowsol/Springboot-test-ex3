@@ -2,9 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
 </head>
 <body>
+<style>
+    .big{
+        background-color: aqua;
+    }
+</style>
+<div>
+    <h1>${dto.sno}</h1>
+    <h1>${dto.title?cap_first}</h1>
+    <h2 <#if dto.sno==10>class='big'</#if></h2>>SHOW</h2>
+</div>
+
 <!--반복문 처리-->
 <!--<ul>-->
 <!--    <li th:each="dto : ${list}">-->
@@ -38,15 +50,15 @@
 <!--    </li>-->
 <!--</ul>-->
 
-<style>
-    .target{
-        background-color: red;
-    }
-</style>
+<!--<style>-->
+<!--    .target{-->
+<!--        background-color: red;-->
+<!--    }-->
+<!--</style>-->
 
-<ul>
-    <li th:each="dto, state: ${list}" th:class="${dto.sno % 5 == 0}?'target'" th:text="${dto}">
-    </li>
-</ul>
+<!--<ul>-->
+<!--    <li th:each="dto, state: ${list}" th:class="${dto.sno % 5 == 0}?'target'" th:text="${dto}">-->
+<!--    </li>-->
+<!--</ul>-->
 </body>
 </html>

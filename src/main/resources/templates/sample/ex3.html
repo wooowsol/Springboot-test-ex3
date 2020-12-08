@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-
-    <h1 th:text="${result}"></h1>
-    <h1 th:text="${dto}"></h1>
-
-    <script th:inline="javascipt">
-
-        var msg = [[${result}]];
-        var dto = [[${dto}]];
-    </script>
+<ul>
+    <#list dtoList as dto>
+    <li>
+        <p>${(dto.sno % 2 == 0)?then('EVEN','ODD')}</p>
+        <p>${dto.sno}</p>
+        <p>${dto.sno + 10}</p>
+        <p>${dto.sno % 3}</p>
+        <p><#if (dto.sno >=5)>BIGGER</#if></p>
+    </li>
+</#list>
+</ul>
 </body>
 </html>
