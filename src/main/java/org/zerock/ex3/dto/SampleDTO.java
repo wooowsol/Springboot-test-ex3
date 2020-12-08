@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -13,8 +15,9 @@ public class SampleDTO {
 
     private Long sno;
 
-    private String title;
+    private String first;
 
-    private String writer;
+    private String last;
 
+    private LocalDateTime regTime;
 }
