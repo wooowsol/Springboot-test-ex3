@@ -31,14 +31,14 @@ public class SampleController {
 
         List<SampleDTO> list = IntStream.rangeClosed(1,20).mapToObj(i -> {
             SampleDTO dto = SampleDTO.builder()
-                .sno((long) i)
-                .first("First.."+i)
-                .last("Last.."+i)
-                .regTime(LocalDateTime.now())
-                .build();
+                    .sno((long) i)
+                    .first("First.."+i)
+                    .last("Last.."+i)
+                    .regTime(LocalDateTime.now())
+                    .build();
             return dto;
         }).collect(Collectors.toList());
-        model.addAttribute("list", list);
+        model.addAttribute("list", "list");
     }
 
     @GetMapping({"/exInline"})
